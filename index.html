@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
+    <link href="/public/css/lib/styles.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<!-- <div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div> -->
+
+<!--
+    
+    Now that's the core element used by impress.js.
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    
+    You probably won't need it now, but there are some configuration options that can be set on this element.
+    
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+    
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+    If you are willing to change this value make sure you understand how CSS perspective works:
+    https://developer.mozilla.org/en/CSS/perspective
+    
+    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
+    right around the corner of this tag ;)
+    
+-->
+<div id="impress">
+
+    <!--
+        
+        Here is where interesting thing start to happen.
+        
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        
+        Positioning information is passed through data attributes.
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
+        
+        It will not be rotated or scaled.
+        
+    -->
+    <div id="1" class="step slide" data-x="-1000" data-y="1500">
+        <h1>Build. Deploy.</h1>
+        <h3>Get your projects up and running</h3>
+        <h2><a href="http://twitter.com/iammattnull" target="_blank">@iammattnull</a></h2>
+        <a href="http://gifyourface.com" target="_blank">
+            <img src="/public/img/gyf-logo.svg" width="200" />
+        </a>
+        <a href="http://beinghuman.is" target="_blank">
+            <img src="/public/img/hd-logo.png" width="300" />
+        </a>
+    </div>
+    <div id="2" class="step slide" data-x="2500" data-y="3900" data-rotate-x="90">
+        <h1>GIF Your Face</h1>
+        <h2>Over the first 2 weeks...</h2>
+        <ul>
+            <li>12,800+ page views</li>
+            <li>5,500+ GIFs Created</li>
+            <li>3.6GB of data stored</li>
+            <li>110 upvotes on Product Hunt</li>
+        </ul>
+        <a href="http://gifyourface.com" target="_blank">
+            <img src="/public/img/gyf-logo.svg" width="200" />
+        </a>
+    </div>
+    <div id="3" class="step slide" data-x="1000" data-z="2000" data-y="1500" data-rotate="-90">
+        <h1>The Version 1 Stack</h1>
+        <h2>No Server</h2>
+        <ul>
+            <li>MithrilJS - Single Page App, very portable</li>
+            <li>Amazon S3 - Storage / Hosting</li>
+            <li>Amazon Route 53 - Scalable DNS</li>
+        </ul>
+        <h2>Cost for first 2 weeks - ~$3</h2>
+         <a href="http://gifyourface.com" target="_blank">
+            <img src="/public/img/gyf-logo.svg" width="200" />
+        </a>
+    </div>
+    <div id="4" class="step slide" data-x="1000" data-z="1000" data-y="-2500" data-rotate="-180">
+        <h1>The Version 2 Stack</h1>
+        <h2>Server + Database</h2>
+        <ul>
+            <li>MithrilJS - Single Page App, very portable</li>
+            <li>Node.js</li>
+            <li>Amazon S3 - Storage / Hosting</li>
+            <li>Amazon Cloudfront - CDN</li>
+            <li>Heroku - Hosting</li>
+            <li>MongoDB via Compose.io - Database</li>
+            <li>Redis via RedisGreen</li>
+        </ul>
+        <h2>~$40 / mo</h2>
+         <a href="http://gifyourface.com" target="_blank">
+            <img src="/public/img/gyf-logo.svg" width="200" />
+        </a>
+    </div>
+    <div id="5" class="step slide" data-x="2500" data-z="1000" data-y="-2500" data-rotate-y="90" data-rotate-x="-90" data-rotate-z="-90">
+        <h1>Thanks!</h1>
+        <h2>Matt Null</h2>
+        <h2><a href="http://twitter.com/iammattnull" target="_blank">@iammattnull</a></h2>
+        <a href="http://gifyourface.com" target="_blank">
+            <img src="/public/img/gyf-logo.svg" width="200" />
+        </a>
+        <a href="http://beinghuman.is" target="_blank">
+            <img src="/public/img/hd-logo.png" width="300" />
+        </a>
+    </div>
+    <script src="/public/js/vendor/impress.min.js"></script>
+    <script>impress().init();</script>
+    </body>
+</html>
+
+<!--
+    
+    Now you know more or less everything you need to build your first impress.js presentation, but before
+    you start...
+    
+    Oh, you've already cloned the code from GitHub?
+    
+    You have it open in text editor?
+    
+    Stop right there!
+    
+    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
+    first needs to grow in your mind.
+    
+    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
+    
+    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
+    to present. It will get you closer and closer to the layout you'll build later with impress.js.
+    
+    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
+    it earlier, because you'll only waste your time fighting with positioning of useless points.
+    
+    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
+    creating awesome and engaging presentations.
+    
+    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
+    
+-->
+
+<!--
+    
+    Are you still reading this?
+    
+    For real?
+    
+    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
+    to congratulate you personally :)
+    
+    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
+    or anything you like to drink. And raise a glass for me ;)
+    
+    Cheers!
+    
+-->
